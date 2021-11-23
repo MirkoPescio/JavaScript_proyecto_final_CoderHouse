@@ -1,0 +1,4 @@
+@mixin ancho_y_alto($width, $height) {
+    width: $width;
+    height: $height;
+}

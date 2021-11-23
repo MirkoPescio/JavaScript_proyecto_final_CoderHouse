@@ -1,0 +1,140 @@
+@import "./parciales/mixins";
+@import "./parciales/responsive";
+@import "./parciales/variables";
+
+// Aplicando estilos al Header
+
+.divIconos{
+    background-color: rgb(58, 57, 57);
+
+    &__tabla{
+        margin: 0 auto;
+
+        &__iconoContacto{
+            @include ancho_y_alto(7.5rem, 5rem);
+        }
+    }
+}
+
+.carousel{
+    @include ancho_y_alto($width100, 45rem);
+
+    &__imagenSlide{
+        @include ancho_y_alto($width100, 45rem);
+    }
+    &__slideTexto{
+        background-color: rgba(0, 0, 0, 0.7);
+
+        & h5{
+            font-size: 2rem;
+        }
+        & p{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@include movilHeader{
+    .divIconos__tabla__iconoContacto{
+        @include ancho_y_alto(4rem, 5rem);
+    }
+    .carousel{
+        @include ancho_y_alto($width100, 32rem);
+        
+        &__imagenSlide{
+            @include ancho_y_alto($width100, 32rem);
+        }
+    
+        &__slideTexto{
+    
+            & h5{
+                font-size: 1.4rem;
+            }
+            & p{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// Aplicando estilos al Footer
+
+.footer{
+    display: table;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: $colorWhite;
+    background-color: rgb(35, 39, 44);
+    width: $width100;
+    margin: 0 auto;
+
+    &__tabla{
+        margin: 0 auto;
+
+        &__subtitulo {
+            text-align: center;
+        }
+        &__seccion{
+            padding: 0 4.5rem;
+            text-align: center;
+
+            & ul {
+                padding: 0;
+
+                & li {
+                    text-align: left;
+                }
+            }
+        }
+        & ul {
+            list-style: none;
+        }
+    }
+}
+#copyRight{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+@include movilFooter{
+    .footer{
+        margin: 0 auto;
+
+        &__tabla__subtitulo {
+            font-size: 1rem;
+        }
+        &__tabla__seccion {
+            padding: 0 0.9rem;
+            font-size: 0.8rem;
+        }
+        &__tabla__seccion ul li {
+            text-align: center;
+        }
+        &__tabla__seccion ul li img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+@include tabletFooter{
+    .footer{
+
+        &__tabla__seccion{
+            padding: 0 1.25rem;
+        }
+    }
+}
+
+@include netbookFooter{
+    .footer{
+        &__tabla__subtitulo {
+            font-size: 2rem;
+        }
+        &__tabla__seccion{
+            padding: 0 4rem;
+            font-size: 1.75rem;
+        }
+    }
+}
