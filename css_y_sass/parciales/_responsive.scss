@@ -27,3 +27,9 @@
         @content;
     }
 }
+
+@mixin samsungGalaxyFold {
+    @media (max-width: 285px){
+        @content;
+    }
+}
