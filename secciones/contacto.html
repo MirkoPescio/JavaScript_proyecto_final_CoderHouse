@@ -60,26 +60,26 @@
 
             <div class="contenidoContacto__envoltura">
                 <div class="contenidoContacto__envoltura__formulario">
-                    <form>
+                    <form id="formularioContacto">
                         <p>
-                            <label for="nombreCompleto">Nombre Completo</label>
-                            <input type="text" name="nombreCompleto" id="fullname">
+                            <label for="usuario">Nombre Completo</label>
+                            <input type="text" name="usuario" id="inputNombre">
                         </p>
                         <p>
                             <label>E-Mail</label>
-                            <input type="email" name="email">
+                            <input type="email" name="email" id="inputEmail" required>
                         </p>
                         <p>
                             <label>Teléfono</label>
-                            <input type="tel" name="telefono">
+                            <input type="tel" name="telefono" id="inputTelefono" required>
                         </p>
                         <p>
                             <label>Asunto</label>
-                            <input type="text" name="asunto">
+                            <input type="text" name="asunto" id="inputAsunto" required>
                         </p>
                         <p class="bloque">
                             <label>Mensaje</label>
-                            <textarea name="mensaje" rows="3"></textarea>
+                            <textarea name="mensaje" rows="3" id="areaMensaje" required></textarea>
                         </p>
                         <p class="bloque">
                             <button type="submit">Enviar</button>
@@ -130,7 +130,7 @@
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <!--JS específicos de clase-->
+    <script src="../js/clase_9_ej_obligatorio.js"></script>
 </body>
 </html>
