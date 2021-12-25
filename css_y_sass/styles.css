@@ -1,5 +1,5 @@
 body {
-  background: url(../../fondo/abstract-hexagonal-background-large-number.jpg);
+  background: url(../fondo/fondo-negro.jpg);
 }
 
 /*====================Variables para el main.scss===========================*/
@@ -12,6 +12,10 @@ body {
 .divIconos__tabla__iconoContacto {
   width: 7.5rem;
   height: 5rem;
+}
+
+.contenedorDelCarrito {
+  margin-right: 12rem;
 }
 
 .carousel {

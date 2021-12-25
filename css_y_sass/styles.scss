@@ -17,6 +17,10 @@
     }
 }
 
+.contenedorDelCarrito {
+    margin-right: 12rem;
+}
+
 .carousel{
     @include ancho_y_alto($width100, 45rem);
 

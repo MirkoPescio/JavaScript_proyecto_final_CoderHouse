@@ -27,12 +27,7 @@ Capturar una o más entradas por prompt() y mostrarlas en el HTML, modificando e
 Defino objetos y listas que pueda usar más adelante
 */
 
-// Para aplicar lo visto, elimino uno de los elementos en el dom de populares.html
-
-let productoBatman = document.getElementById("batmanKnight_populares");
-productoBatman.parentNode.removeChild(productoBatman);
-
-// Y agrego 2 nuevos:
+// Agrego 2 productos nuevos:
 
 class producto {
     constructor(imagen, nombre, precio) {
