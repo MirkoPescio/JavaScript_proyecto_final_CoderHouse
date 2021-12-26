@@ -10,7 +10,7 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="./css_y_sass/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css_y_sass/sweetalert2.min.css">
     <link href="../css_y_sass/styles_bootstrap.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css_y_sass/styles.css">
 </head>
@@ -79,9 +79,9 @@
     </header>
     <!-- Section-->
     <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
+        <div class="container px-4 px-lg-5 mt-5" id="lista-productos">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="contenedorPopulares">
-                <div class="col mb-5">
+                <div class="col mb-5 producto">
                     <div class="card h-100">
                         <!-- Product image-->
                         <img class="card-img-top" src="../imagenes/nba_2k21.png" alt="..." />
@@ -99,16 +99,18 @@
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                $900,00
+                                <div class="contenedorPrecio">
+                                    $900,00
+                                </div>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a></div>
+                            <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="nba2k21">Añadir al carrito</button></div>
                         </div>
                     </div>
                 </div>
-                <div class="col mb-5">
+                <div class="col mb-5 producto">
                     <div class="card h-100">
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
@@ -129,16 +131,18 @@
                                 </div>
                                 <!-- Product price-->
                                 <span class="text-muted text-decoration-line-through">$2000,00</span>
-                                $1800,00
+                                <div class="contenedorPrecio">
+                                    $1800,00
+                                </div>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a></div>
+                            <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="theLastofUs2">Añadir al carrito</button></div>
                         </div>
                     </div>
                 </div>
-                <div class="col mb-5">
+                <div class="col mb-5 producto">
                     <div class="card h-100">
                         <!-- Product image-->
                         <img class="card-img-top" src="../imagenes/uncharted-4-a-thiefs-end-ps4.jpg" alt="..." />
@@ -146,7 +150,7 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Uncharted 4: a thief´s end PS4</h5>
+                                <h5 class="fw-bolder">Uncharted 4: a thief's end PS4</h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
                                     <div class="bi-star-fill"></div>
@@ -156,16 +160,18 @@
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                $700,00
+                                <div class="contenedorPrecio">
+                                    $700,00
+                                </div>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a></div>
+                            <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="uncharted4">Añadir al carrito</button></div>
                         </div>
                     </div>
                 </div>
-                <div class="col mb-5" id="batmanKnight_populares">
+                <div class="col mb-5 producto">
                     <div class="card h-100">
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
@@ -186,12 +192,14 @@
                                 </div>
                                 <!-- Product price-->
                                 <span class="text-muted text-decoration-line-through">$900,00</span>
-                                $700,00
+                                <div class="contenedorPrecio">
+                                    $700,00
+                                </div>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a></div>
+                            <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="batmanKnight">Añadir al carrito</button></div>
                         </div>
                     </div>
                 </div>
@@ -231,8 +239,8 @@
     <script src="../js/bootstrap/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="./js/carrito.js"></script>
-    <script src="./js/pedido.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/pedido.js"></script>
     <script src="../js/scripts.js"></script>
 </body>
 </html>
