@@ -1,3 +1,10 @@
+/*
+ * @ version: v2.0.2
+ * @ autor: Mirko Pescio
+ * @ fecha: 27/12/2021
+ * @ Descripción: 2da Preentrega del proyecto final
+*/
+
 class Carrito {
     // Primer método
     // Añadir el producto al carrito de compras

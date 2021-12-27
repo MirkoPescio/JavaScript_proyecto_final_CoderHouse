@@ -19,7 +19,7 @@ Capturar una o más entradas por prompt() y mostrarlas en el HTML, modificando e
 
 /* @ version: v1.1.0
  * @ autor: Mirko Pescio
- * @ fecha: 15/12/2021
+ * @ fecha: 27/12/2021
  * 
 */
 
