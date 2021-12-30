@@ -39,6 +39,10 @@
     }
 }
 
+.precioProducto{
+    display: inline;
+}
+
 @include movilHeader{
     .divIconos__tabla__iconoContacto{
         @include ancho_y_alto(4rem, 5rem);
@@ -60,6 +64,15 @@
             }
         }
     }
+}
+
+/*================Aplicando SASS en las secciones del archivo compra.html===========================*/
+
+#cargando {
+    display: none;
+    margin-right: 5rem !important;
+    width: 20rem !important;
+    height: 10rem !important;
 }
 
 /*================Aplicando SASS en las secciones del archivo contacto.html=========================*/

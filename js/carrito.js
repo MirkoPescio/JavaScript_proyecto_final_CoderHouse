@@ -22,7 +22,7 @@ class Carrito {
         const infoProducto = {
             imagen: producto.querySelector("img").src,
             titulo: producto.querySelector("h5").textContent,
-            precio: producto.querySelector(".contenedorPrecio").textContent,
+            precio: producto.querySelector(".precioProducto").textContent,
             id: producto.querySelector("button").getAttribute("data-id"),
             cantidad: 1
         }
@@ -34,7 +34,12 @@ class Carrito {
             }
         });
         if(productosLS === infoProducto.id) {
-            console.log("Producto ya agregado")
+            Swal.fire({
+                title: 'Oops...',
+                text: 'El producto seleccionado ya fué agregado',
+                timer: 2000, // 2 segundos
+                showConfirmButton: false
+            });
         }
         else {
             this.insertarCarrito(infoProducto);
@@ -66,6 +71,7 @@ class Carrito {
             productoID = producto.querySelector("a").getAttribute("data-id");
         }
         this.eliminarProductosLocalStorage(productoID);
+        this.calcularTotal(); // Es para que el monto total se actualice si se borra algún producto
     }
 
     vaciarCarrito(e) {
@@ -125,7 +131,71 @@ class Carrito {
         });
     }
 
+    leerLocalStorageCompra() {
+        let productosLS;
+        productosLS = this.obtenerProductosLocalStorage();
+        productosLS.forEach(function(producto){
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>
+                    <img src="${producto.imagen}" width=100>
+                </td>
+                <td>${producto.titulo}</td>
+                <td>${producto.precio}</td>
+                <td>
+                    <input type="number" class="form-control" min="1" value=${producto.cantidad}>
+                </td>
+                <td>${producto.precio * producto.cantidad}</td>
+                <td>
+                    <a href="#" class="fas fa-times-circle borrar-producto" style="font-size:20px" data-id="${producto.id}"></a>
+                </td>`;
+            listaCompra.appendChild(row);
+        });
+    }
+
     vaciarLocalStorage() {
         localStorage.clear();
+    }
+
+    procesarPedidoIndex(e){
+        e.preventDefault();
+        if (this.obtenerProductosLocalStorage().length === 0){
+            Swal.fire({
+                title: 'Oops...',
+                text: 'Tu carrito de compras está vacío',
+                timer: 2000, // 2 segundos
+                showConfirmButton: false
+            });
+        }
+        else{
+            location.href = "./secciones/compra.html";
+        }
+    }
+
+    procesarPedidoSecciones(e){
+        e.preventDefault();
+        if (this.obtenerProductosLocalStorage().length === 0){
+            Swal.fire({
+                title: 'Oops...',
+                text: 'Tu carrito de compras está vacío',
+                timer: 2000, // 2 segundos
+                showConfirmButton: false
+            });
+        }
+        else{
+            location.href = "../secciones/compra.html";
+        }
+    }
+
+    calcularTotal() {
+        let productoLS;
+        let total = 0;
+        productoLS = this.obtenerProductosLocalStorage();
+        for (let index = 0; index < productoLS.length; index++) {
+            let element = Number(productoLS[index].precio * productoLS[index].cantidad);
+            total += element;
+        }
+
+        document.getElementById("total").innerHTML = "$ " + total.toFixed(2) // Para mostrar 2 decimales
     }
 }

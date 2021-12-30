@@ -36,6 +36,10 @@ body {
   font-size: 1.5rem;
 }
 
+.precioProducto {
+  display: inline;
+}
+
 @media (max-width: 576px) {
   .divIconos__tabla__iconoContacto {
     width: 4rem;
@@ -57,6 +61,14 @@ body {
     font-size: 1rem;
   }
 }
+/*================Aplicando SASS en las secciones del archivo compra.html===========================*/
+#cargando {
+  display: none;
+  margin-right: 5rem !important;
+  width: 20rem !important;
+  height: 10rem !important;
+}
+
 /*================Aplicando SASS en las secciones del archivo contacto.html=========================*/
 .contenidoContacto {
   box-sizing: border-box;

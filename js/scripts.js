@@ -39,8 +39,8 @@ class producto {
 }
 
 let arrayNuevosPopulares = [];
-arrayNuevosPopulares.push(new producto("../imagenes/batman-return-to-arkham-ps4_2.jpg", "Batman: Return to Arkham PS4", "850,00", "batmanReturn"));
-arrayNuevosPopulares.push(new producto("../imagenes/heavy-rain-ps4.jpg", "Heavy Rain PS4", "$650,00", "heavyRain"));
+arrayNuevosPopulares.push(new producto("../imagenes/batman-return-to-arkham-ps4_2.jpg", "Batman: Return to Arkham PS4", "850.00", "batmanReturn"));
+arrayNuevosPopulares.push(new producto("../imagenes/heavy-rain-ps4.jpg", "Heavy Rain PS4", "650.00", "heavyRain"));
 
 for (const item of arrayNuevosPopulares) {
     let principal = document.getElementById("contenedorPopulares");
@@ -65,7 +65,7 @@ for (const item of arrayNuevosPopulares) {
                                             </div>
                                             <!-- Product price-->
                                             <div class="contenedorPrecio">
-                                                ${item.precio}
+                                                $ ${item.precio}
                                             </div>
                                         </div>
                                     </div>
