@@ -62,6 +62,14 @@ body {
   }
 }
 /*================Aplicando SASS en las secciones del archivo compra.html===========================*/
+.compraFormulario {
+  color: white;
+}
+
+.compraInfoProductos {
+  color: white;
+}
+
 #cargando {
   display: none;
   margin-right: 5rem !important;
