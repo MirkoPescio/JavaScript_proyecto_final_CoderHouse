@@ -26,6 +26,7 @@ class Carrito {
             id: producto.querySelector("button").getAttribute("data-id"),
             cantidad: 1
         }
+
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function(productoLS){
@@ -40,6 +41,22 @@ class Carrito {
                 timer: 2000, // 2 segundos
                 showConfirmButton: false
             });
+
+            // clase 13: animaciones___ejercicio_complementario
+            $(`.card[data-id = "${infoProducto.id}"]`).append(`<p class="agregado" style="display: none">El producto ya fué agregado al carrito de compras</p>`);
+            $(".agregado")
+                .fadeIn(3000)
+                .delay(1000)
+                .fadeOut(2000);
+            $(".agregado").css({
+                "color": "black",
+                "font-size": "1.25rem",
+                "border": "2px solid #ccc"
+            });
+            setTimeout(function() { // Es para eliminar el parrafo ".agregado" después de la animación
+                $(".agregado")
+                    .remove()
+            }, 6500);
         }
         else {
             this.insertarCarrito(infoProducto);
@@ -153,6 +170,8 @@ class Carrito {
         });
     }
 
+    
+
     vaciarLocalStorage() {
         localStorage.clear();
     }
@@ -195,7 +214,6 @@ class Carrito {
             let element = Number(productoLS[index].precio * productoLS[index].cantidad);
             total += element;
         }
-
         document.getElementById("total").innerHTML = "$ " + total.toFixed(2) // Para mostrar 2 decimales
     }
 }

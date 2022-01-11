@@ -8,9 +8,9 @@ const correo = document.getElementById("correo");
 function cargarEventosCompra() {
     document.addEventListener("DOMContentLoaded", compra.leerLocalStorageCompra());
 
-    carritoCompra.addEventListener("click", (e)=>{compra.eliminarProducto(e)});
-
     compra.calcularTotal();
+
+    carritoCompra.addEventListener("click", (e)=>{compra.eliminarProducto(e)});
 
     procesarCompraBtn.addEventListener("click", procesarCompra);
 }

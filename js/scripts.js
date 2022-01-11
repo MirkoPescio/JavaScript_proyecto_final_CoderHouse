@@ -47,7 +47,7 @@ for (const item of arrayNuevosPopulares) {
     let contenedor = document.createElement("div");
     contenedor.innerHTML = `
                             <div class="col mb-5 producto">
-                                <div class="card h-100">
+                                <div class="card h-100" data-id="${item.dataID}">
                                     <!-- Product image-->
                                     <img class="card-img-top" src="${item.imagen}" alt="..." />
                                     <!-- Product details-->
@@ -65,7 +65,7 @@ for (const item of arrayNuevosPopulares) {
                                             </div>
                                             <!-- Product price-->
                                             <div class="contenedorPrecio">
-                                                $ ${item.precio}
+                                                $ <div class="precioProducto">${item.precio}</div>
                                             </div>
                                         </div>
                                     </div>
