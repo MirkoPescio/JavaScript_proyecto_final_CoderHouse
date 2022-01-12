@@ -123,7 +123,7 @@ class Carrito {
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function(productoLS, index){
             if(productoLS.id === productoID) {
-                productosLS.splice(index, 1);
+                productosLS.splice(index, 1); // Borra un elemento en la posición Index
             }
         });
 
@@ -160,17 +160,15 @@ class Carrito {
                 <td>${producto.titulo}</td>
                 <td>${producto.precio}</td>
                 <td>
-                    <input type="number" class="form-control" min="1" value=${producto.cantidad}>
+                    <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
-                <td>${producto.precio * producto.cantidad}</td>
+                <td id='subtotales'>${producto.precio * producto.cantidad}</td>
                 <td>
                     <a href="#" class="fas fa-times-circle borrar-producto" style="font-size:20px" data-id="${producto.id}"></a>
                 </td>`;
             listaCompra.appendChild(row);
         });
     }
-
-    
 
     vaciarLocalStorage() {
         localStorage.clear();
@@ -215,5 +213,28 @@ class Carrito {
             total += element;
         }
         document.getElementById("total").innerHTML = "$ " + total.toFixed(2) // Para mostrar 2 decimales
+    }
+
+    obtenerEvento(e) {
+        e.preventDefault();
+        let id, cantidad, producto, productosLS;
+        if (e.target.classList.contains('cantidad')) {
+            producto = e.target.parentElement.parentElement;
+            id = producto.querySelector('a').getAttribute('data-id');
+            cantidad = producto.querySelector('input').value;
+            let actualizarMontos = document.querySelectorAll('#subtotales');
+            productosLS = this.obtenerProductosLocalStorage();
+            productosLS.forEach(function (productoLS, index) {
+                if (productoLS.id === id) {
+                    productoLS.cantidad = cantidad;                    
+                    actualizarMontos[index].innerHTML = Number(cantidad * productosLS[index].precio);
+                }    
+            });
+            localStorage.setItem('productos', JSON.stringify(productosLS));
+            
+        }
+        else {
+            console.log("click afuera");
+        }
     }
 }

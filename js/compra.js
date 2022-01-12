@@ -13,6 +13,10 @@ function cargarEventosCompra() {
     carritoCompra.addEventListener("click", (e)=>{compra.eliminarProducto(e)});
 
     procesarCompraBtn.addEventListener("click", procesarCompra);
+
+    carritoCompra.addEventListener('change', (e) => { compra.obtenerEvento(e) });
+    carritoCompra.addEventListener('keyup', (e) => { compra.obtenerEvento(e) });
+
 }
 
 cargarEventosCompra();
