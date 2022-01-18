@@ -1,3 +1,11 @@
+/*
+ * @ version: v2.0.2
+ * @ autor: Mirko Pescio
+ * @ fecha: 18/01/2022
+ * @ Descripción: Desafío obligatorio clase de AJAX: Incorporando API
+                  de Mercado Pago
+*/
+
 const compra = new Carrito();
 const listaCompra = document.querySelector("#lista-compra tbody");
 const carritoCompra = document.getElementById("carrito");
