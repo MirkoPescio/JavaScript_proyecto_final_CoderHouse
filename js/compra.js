@@ -97,6 +97,7 @@ function procesarCompra(e) {
             cargandoGif.style.display = "none";
             setTimeout(()=> { // Y vaciamos el localStorage después de terminar de procesar un pago
                 compra.vaciarLocalStorage();
+                window.location = "../index.html";
             }, 2000)
         }, 3000);
     }
