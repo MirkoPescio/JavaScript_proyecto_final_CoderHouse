@@ -14,12 +14,49 @@ function cargarEventosCompra() {
 
     procesarCompraBtn.addEventListener("click", procesarCompra);
 
-    carritoCompra.addEventListener('change', (e) => { compra.obtenerEvento(e) });
-    carritoCompra.addEventListener('keyup', (e) => { compra.obtenerEvento(e) });
+    carritoCompra.addEventListener('change', (e) => {compra.obtenerEvento(e)});   
+    carritoCompra.addEventListener('keyup', (e) => {compra.obtenerEvento(e)});
 
+    procesarCompraBtn.addEventListener("click", pagar);
 }
 
 cargarEventosCompra();
+
+
+
+
+async function pagar() {
+    const productos = compra.obtenerProductosLocalStorage().map((element) => {
+      let nuevoElemento = {
+        title: element.titulo,
+        picture_url: element.imagen,
+        category_id: element.id,
+        quantity: Number(element.cantidad),
+        currency_id: "ARS",
+        unit_price: Number(element.precio),
+      };
+      return nuevoElemento;
+    });
+    console.log(productos)
+    const response = await fetch(
+      "https://api.mercadopago.com/checkout/preferences",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer TEST-680675151110839-052307-64069089337ab3707ea2f547622a1b6a-60191006",
+        },
+        body: JSON.stringify({
+          items: productos,
+        }),
+      }
+    );
+    const data = await response.json();
+    console.log(data)
+    window.open(data.init_point, "_blank");
+}
+
+
+
 
 function procesarCompra(e) {
     e.preventDefault();
@@ -50,9 +87,8 @@ function procesarCompra(e) {
 
         setTimeout(()=> { // Para volver a esconder el Gif
             cargandoGif.style.display = "none";
-            setTimeout(()=> { // Y vaciamos el localStorage y nos redirige al index.html
+            setTimeout(()=> { // Y vaciamos el localStorage después de terminar de procesar un pago
                 compra.vaciarLocalStorage();
-                window.location = "../index.html";
             }, 2000)
         }, 3000);
     }
