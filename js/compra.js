@@ -51,7 +51,7 @@ async function pagar() {
       {
         method: "POST",
         headers: {
-          Authorization: "Bearer TEST-680675151110839-052307-64069089337ab3707ea2f547622a1b6a-60191006",
+          Authorization: "Bearer TEST-2004336226964797-011621-8af45d2f304340f63094770a87458a35-178503961",
         },
         body: JSON.stringify({
           items: productos,

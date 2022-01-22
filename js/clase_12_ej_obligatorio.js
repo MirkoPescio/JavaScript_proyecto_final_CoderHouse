@@ -56,6 +56,14 @@ $("#formularioContacto").submit(function(e) {
     datosUsuario.push(datos);
     console.log(datosUsuario);
 
-    alert("Datos Enviados:");
-    alert(` Nombre: ${datos.nombre} \n Email: ${datos.mail} \n Teléfono: ${datos.telefono} \n Asunto: ${datos.asunto} \n Mensaje: ${datos.mensaje}`);
+    Swal.fire({
+        title: 'Datos Enviados:',
+        text: `Nombre: ${datos.nombre},
+               Email: ${datos.mail},
+               Teléfono: ${datos.telefono},
+               Asunto: ${datos.asunto} y
+               Mensaje: ${datos.mensaje}`,
+        timer: 3000, // 2 segundos
+        showConfirmButton: false
+    });
 });

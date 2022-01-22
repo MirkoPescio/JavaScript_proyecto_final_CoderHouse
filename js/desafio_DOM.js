@@ -17,10 +17,10 @@ Establecer un mensaje de bienvenida aleatorio usando un array de mensajes.
 Capturar una o más entradas por prompt() y mostrarlas en el HTML, modificando el DOM.
 */
 
-/* @ version: v1.1.0
+/* @ version: v2.0.0
  * @ autor: Mirko Pescio
  * @ fecha: 27/12/2021
- * 
+ * @ Ultima modificación: 22/01/2022
 */
 
 /*
@@ -30,23 +30,24 @@ Defino objetos y listas que pueda usar más adelante
 // Agrego 2 productos nuevos:
 
 class producto {
-    constructor(imagen, nombre, precio, dataID) {
+    constructor(imagen, nombre, precio, dataID, categoria) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.precio = precio;
         this.dataID = dataID;
+        this.categoria = categoria;
     }
 }
 
 let arrayNuevosPopulares = [];
-arrayNuevosPopulares.push(new producto("../imagenes/batman-return-to-arkham-ps4_2.jpg", "Batman: Return to Arkham PS4", "850.00", "batmanReturn"));
-arrayNuevosPopulares.push(new producto("../imagenes/heavy-rain-ps4.jpg", "Heavy Rain PS4", "650.00", "heavyRain"));
+arrayNuevosPopulares.push(new producto("../imagenes/batman-return-to-arkham-ps4_2.jpg", "Batman: Return to Arkham PS4", "850.00", "batmanReturn", "superheroes"));
+arrayNuevosPopulares.push(new producto("../imagenes/heavy-rain-ps4.jpg", "Heavy Rain PS4", "650.00", "heavyRain", "accion/aventura"));
 
 for (const item of arrayNuevosPopulares) {
     let principal = document.getElementById("contenedorPopulares");
     let contenedor = document.createElement("div");
     contenedor.innerHTML = `
-                            <div class="col mb-5 producto">
+                            <div class="col mb-5 producto" category="${item.categoria}">
                                 <div class="card h-100" data-id="${item.dataID}">
                                     <!-- Product image-->
                                     <img class="card-img-top" src="${item.imagen}" alt="..." />

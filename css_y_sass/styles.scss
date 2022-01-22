@@ -39,6 +39,42 @@
     }
 }
 
+// Categorías
+
+.category_list{
+	display: flex;
+	width: 100%;
+}
+
+.category_list .category_item{
+	display: block;
+	width: 90%;
+	padding: 15px 0;
+	margin-bottom: 20px;
+    margin: 1rem;
+	background: #E84C3D;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+    cursor: pointer;
+}
+
+.category_list .ct_item-active{
+	background: #2D3E50;
+}
+
+@media (max-width: 576px) {
+    .category_list {
+        display: inline-block;
+    }
+}
+
+// Para los cards de los productos
+
+.producto{
+    transition: all 0.5s;
+}
+
 .precioProducto{
     display: inline;
 }
