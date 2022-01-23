@@ -1,3 +1,5 @@
+// Aplicando el filtro de productos por categorías
+
 $(document).ready(function(){
 
 	// AGREGANDO CLASE ACTIVE AL PRIMER ENLACE ====================
@@ -34,4 +36,37 @@ $(document).ready(function(){
 			$('.producto').css('transform', 'scale(1)');
 		} setTimeout(showAll,500);
 	});
+});
+
+
+
+// Aplicando el filtro de productos por rango de precio
+
+$(document).on("submit", "form.precioRange", (e) => {
+    let precioEnValueMenor = e.target[0].value;
+	let precioEnValueMayor = e.target[2].value;
+        
+    for (const producto of $('.producto')) {
+            
+        let precioEnProducto = producto.querySelector(".precioProducto").innerHTML;
+
+        if (parseInt(precioEnProducto) > parseInt(precioEnValueMenor) && parseInt(precioEnProducto) < parseInt(precioEnValueMayor)) {
+			// Simplemente no se aplica nada
+        } else {
+            producto.remove(); // Se eliminan los productos que no cumplen con la condición
+        }
+    }
+});
+
+$("#restablecerFiltros").click(function restablecerFiltros() {
+	// Simplemente recargamos la página
+	location.reload(true);
+});
+
+//CAMBIAMOS EL VALOR DE OUTPUT PARA QUE CAMBIE CON EL VALUE DEL INPUT
+$(document).on('input', '#rangeSlider', (e) => {
+    e.target.nextElementSibling.value = e.target.value
+}); 
+$(document).on('input', '#rangeSlider_inversed', (e) => {
+    e.target.nextElementSibling.value = e.target.value
 });

@@ -117,17 +117,31 @@
                 </button>
             </div>
         </div>
-        <!--Categorías-->
-        <div class="category_list">
-            <a class="category_item" category="todo">Todo</a>
-            <a class="category_item" category="deportivos">Deportivos</a>
-            <a class="category_item" category="accion/aventura">Acción/Aventura</a>
-            <a class="category_item" category="combate">Combate</a>
-            <a class="category_item" category="superheroes">Superhéroes</a>
-        </div>
+        <!--Aside-->
+        <aside class="col-md-2 d-flex flex-column">
+            <!--Categorías-->
+            <div class="category_list">
+                <a class="category_item" category="todo">Todo</a>
+                <a class="category_item" category="deportivos">Deportivos</a>
+                <a class="category_item" category="accion/aventura">Acción/Aventura</a>
+                <a class="category_item" category="combate">Combate</a>
+                <a class="category_item" category="superheroes">Superhéroes</a>
+            </div>
+            <!--Rango de Precio-->
+            <form onsubmit="return false" class="precioRange d-flex flex-column">
+                <label for="rangeSlider_inversed">Mínimo:</label>
+                <input id="rangeSlider_inversed" type="range" min="100" max="3500" value="100"></input>
+                <output>100</output>
+                <label for="rangeSlider">Máximo:</label>
+                <input id="rangeSlider" type="range" min="100" max="3500" value="3500"></input>
+                <output>3500</output>
+                <input class="btn btn-primary" type="submit" value="Aplicar">
+            </form>
+            <button class="btn btn-dark" id="restablecerFiltros">Restablecer Filtros</button>
+        </aside>
         <!-- Section-->
         <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5" id="lista-productos">
+            <div class="container px-4 px-lg-5 mt-5 col-md-10 contenedorProductos" id="lista-productos">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5 producto" category="deportivos">
                         <div class="card h-100" data-id="fifa21">
