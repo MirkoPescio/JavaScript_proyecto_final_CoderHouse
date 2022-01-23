@@ -38,11 +38,12 @@ class Carrito {
             }
         });
         if(productosLS === infoProducto.id) {
-            Swal.fire({
+            swal({
                 title: 'Oops...',
+                icon: "error",
                 text: 'El producto seleccionado ya fué agregado',
                 timer: 2000, // 2 segundos
-                showConfirmButton: false
+                button: false
             });
 
             // clase 13: animaciones___ejercicio_complementario
@@ -63,6 +64,13 @@ class Carrito {
         }
         else {
             this.insertarCarrito(infoProducto);
+            swal({
+                title: 'Buena Elección!',
+                icon: 'success',
+                text: `Agregaste ${infoProducto.titulo} al carrito de compras`,
+                timer: 2000, // 2 segundos
+                button: false
+            });
         }
     }
 
@@ -188,11 +196,12 @@ class Carrito {
                             // redirige a la sección para procesar la compra (compra.html)
         e.preventDefault();
         if (this.obtenerProductosLocalStorage().length === 0){
-            Swal.fire({
-                title: 'Oops...',
+            swal({
+                title: '¡ACCESO DENEGADO!',
+                icon: "error",
                 text: 'Tu carrito de compras está vacío',
                 timer: 2000, // 2 segundos
-                showConfirmButton: false
+                button: false
             });
         }
         else{
@@ -206,11 +215,12 @@ class Carrito {
                                 // La finalidad es ir al archivo compra.html
         e.preventDefault();
         if (this.obtenerProductosLocalStorage().length === 0){
-            Swal.fire({
-                title: 'Oops...',
+            swal({
+                title: '¡ACCESO DENEGADO!',
+                icon: "error",
                 text: 'Tu carrito de compras está vacío',
                 timer: 2000, // 2 segundos
-                showConfirmButton: false
+                button: false
             });
         }
         else{

@@ -46,6 +46,7 @@
 aside {
     max-width: 20% !important;
     float: left !important;
+    margin: 1rem !important;
 }
 
 .precioRange{
@@ -79,17 +80,24 @@ aside {
 // Para los cards de los productos
 
 section {
-    max-width: 80% !important;
+    width: 80% !important;
     float: left !important;
+    margin-top: 1rem !important;
+}
+
+.container {
+    width: 100% !important;
+    margin: 0 !important;
 }
 
 .producto{
     transition: all 0.5s;
-    margin: 0 auto;
+    float: left;
 }
 
 .card {
-    width: 11rem;
+    display: flex;
+    width: 14rem;
 }
 
 @media (max-width: 576px) {
@@ -97,7 +105,8 @@ section {
         width: 97% !important;
         max-width: 100% !important;
         float: none !important;
-        align-items: center;
+        align-items: center !important;
+        margin: 0 !important;
     }
     .precioRange {
         width: 97% !important;

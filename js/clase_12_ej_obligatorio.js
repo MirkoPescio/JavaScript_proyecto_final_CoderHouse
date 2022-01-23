@@ -56,14 +56,15 @@ $("#formularioContacto").submit(function(e) {
     datosUsuario.push(datos);
     console.log(datosUsuario);
 
-    Swal.fire({
+    swal({
         title: 'Datos Enviados:',
+        icon: "info",
         text: `Nombre: ${datos.nombre},
                Email: ${datos.mail},
                Teléfono: ${datos.telefono},
                Asunto: ${datos.asunto} y
                Mensaje: ${datos.mensaje}`,
         timer: 3000, // 2 segundos
-        showConfirmButton: false
+        button: false
     });
 });
