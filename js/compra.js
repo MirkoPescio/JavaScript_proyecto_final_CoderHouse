@@ -24,8 +24,6 @@ function cargarEventosCompra() {
 
     carritoCompra.addEventListener('change', (e) => {compra.obtenerEvento(e)});   
     carritoCompra.addEventListener('keyup', (e) => {compra.obtenerEvento(e)});
-
-    procesarCompraBtn.addEventListener("click", pagar);
 }
 
 cargarEventosCompra();
@@ -70,11 +68,12 @@ function procesarCompra(e) {
     e.preventDefault();
 
     if (compra.obtenerProductosLocalStorage().length === 0) {
-        Swal.fire({
-            title: 'Oops...',
+        swal({
+            title: '¡ACCESO DENEGADO!',
+            icon: "error",
             text: 'No hay productos en tu carrito de compras',
             timer: 2000, // 2 segundos
-            showConfirmButton: false
+            button: false
         }).then(function(){ // Si se quiere realizar una compra con el carrito vacío,
             // Se va a mostrar un alert de error de compra por pantalla, y va a 
             // redirigir al usuario a la sección principal: index.html
@@ -82,11 +81,12 @@ function procesarCompra(e) {
         });
     }
     else if (cliente.value === "" || correo.value === "") {
-        Swal.fire({
-            title: 'Oops...',
+        swal({
+            title: 'INFO',
+            icon: "info",
             text: 'Ingrese todos los campos requeridos',
-            timer: 3000, // 2 segundos
-            showConfirmButton: false
+            timer: 2000, // 2 segundos
+            button: false
         });
     }
     else {
@@ -95,6 +95,7 @@ function procesarCompra(e) {
 
         setTimeout(()=> { // Para volver a esconder el Gif
             cargandoGif.style.display = "none";
+            pagar();
             setTimeout(()=> { // Y vaciamos el localStorage después de terminar de procesar un pago
                 compra.vaciarLocalStorage();
                 window.location = "../index.html";

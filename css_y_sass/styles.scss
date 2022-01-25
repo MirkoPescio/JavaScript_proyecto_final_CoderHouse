@@ -55,10 +55,9 @@ aside {
 
 .tituloFiltro{
     color: white;
-    text-align: center;
     width: auto;
     margin: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -67,6 +66,7 @@ aside {
 #buscador{
     width: 100%;
     margin-bottom: 0.25rem;
+    font-size: 0.75rem;
 }
 
 #submitBuscador{
@@ -141,6 +141,7 @@ section {
     #buscador{
         width: 65%;
         float: left;
+        font-size: 1rem;
     }
     #submitBuscador{
         width: 25%;
@@ -174,6 +175,7 @@ section {
     #buscador{
         width: 65%;
         float: left;
+        font-size: 1rem;
     }
     #submitBuscador{
         width: 25%;
