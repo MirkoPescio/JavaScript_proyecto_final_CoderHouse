@@ -1,3 +1,23 @@
+// Aplicando el filtro de productos por nombre (uso del buscador)
+
+const buscador = document.querySelector("#buscador");
+const buscadorSubmit = document.querySelector("#submitBuscador");
+
+const filtrar = () => {
+	// console.log(buscador.value);
+	const texto = buscador.value.toLowerCase();
+	for (let producto of $(".producto")) {
+		let nombre = producto.querySelector("h5").innerHTML.toLowerCase();
+		if (nombre.indexOf(texto) === -1) {
+			function removeProduct(){
+				producto.remove();
+			} setTimeout(removeProduct, 100);
+		}
+	};
+}
+
+buscadorSubmit.addEventListener("click", filtrar);
+
 // Aplicando el filtro de productos por categorías
 
 $(document).ready(function(){
@@ -38,8 +58,6 @@ $(document).ready(function(){
 	});
 });
 
-
-
 // Aplicando el filtro de productos por rango de precio
 
 $(document).on("submit", "form.precioRange", (e) => {
@@ -53,7 +71,9 @@ $(document).on("submit", "form.precioRange", (e) => {
         if (parseInt(precioEnProducto) > parseInt(precioEnValueMenor) && parseInt(precioEnProducto) < parseInt(precioEnValueMayor)) {
 			// Simplemente no se aplica nada
         } else {
-            producto.remove(); // Se eliminan los productos que no cumplen con la condición
+            function removeProduct(){
+				producto.remove();
+			} setTimeout(removeProduct, 100); // Se eliminan los productos que no cumplen con la condición
         }
     }
 });
@@ -63,7 +83,7 @@ $("#restablecerFiltros").click(function restablecerFiltros() {
 	location.reload(true);
 });
 
-//CAMBIAMOS EL VALOR DE OUTPUT PARA QUE CAMBIE CON EL VALUE DEL INPUT
+//CAMBIAMOS EL VALOR DE OUTPUT PARA QUE CAMBIE CON EL VALUE DEL INPUT EN EL RANGO DE PRECIOS
 $(document).on('input', '#rangeSlider', (e) => {
     e.target.nextElementSibling.value = e.target.value
 }); 

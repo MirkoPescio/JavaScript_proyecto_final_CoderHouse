@@ -43,11 +43,29 @@ body {
 aside {
   max-width: 20% !important;
   float: left !important;
-  margin: 1rem !important;
+  margin: 0.5rem !important;
 }
 
 .precioRange {
   color: whitesmoke;
+}
+
+.tituloFiltro {
+  color: white;
+  text-align: center;
+  width: auto;
+  margin: 1rem;
+  font-size: 1.5rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#buscador {
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+#submitBuscador {
+  width: 100%;
 }
 
 .category_list {
@@ -71,6 +89,14 @@ aside {
 
 .category_list .ct_item-active {
   background: #2D3E50;
+}
+
+.botonPrecio {
+  margin: 0.5rem;
+}
+
+#restablecerFiltros {
+  margin: 0.5rem;
 }
 
 section {
@@ -100,7 +126,16 @@ section {
     max-width: 100% !important;
     float: none !important;
     align-items: center !important;
-    margin: 0 !important;
+  }
+
+  #buscador {
+    width: 65%;
+    float: left;
+  }
+
+  #submitBuscador {
+    width: 25%;
+    float: left;
   }
 
   .precioRange {
@@ -129,6 +164,16 @@ section {
     max-width: 100% !important;
     float: none !important;
     align-items: center;
+  }
+
+  #buscador {
+    width: 65%;
+    float: left;
+  }
+
+  #submitBuscador {
+    width: 25%;
+    float: left;
   }
 
   .precioRange {

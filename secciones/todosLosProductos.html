@@ -79,6 +79,13 @@
     </header>
     <!--Aside-->
     <aside class="col-md-2 d-flex flex-column">
+        <h6 class="tituloFiltro">FILTRAR POR BUSCADOR</h6>
+        <!--Buscador-->
+        <div class="container mt-5">
+            <input class="form-control mr-sm-2" id="buscador" type="search" placeholder="Buscar por nombre" aria-label="Search">
+            <button class="btn btn-outline-primary my-sm-0" id="submitBuscador" type="submit">Buscar</button>
+        </div>
+        <h6 class="tituloFiltro">FILTRAR POR CATEGORIA</h6>
         <!--Categorías-->
         <div class="category_list">
             <a class="category_item" category="todo">Todo</a>
@@ -87,15 +94,16 @@
             <a class="category_item" category="combate">Combate</a>
             <a class="category_item" category="superheroes">Superhéroes</a>
         </div>
+        <h6 class="tituloFiltro">FILTRAR POR PRECIO</h6>
         <!--Rango de Precio-->
         <form onsubmit="return false" class="precioRange d-flex flex-column">
             <label for="rangeSlider_inversed">Mínimo:</label>
-            <input id="rangeSlider_inversed" type="range" min="100" max="3500" value="100"></input>
+            <input id="rangeSlider_inversed" type="range" min="100" max="3000" value="100"></input>
             <output>100</output>
             <label for="rangeSlider">Máximo:</label>
-            <input id="rangeSlider" type="range" min="100" max="3500" value="3500"></input>
-            <output>3500</output>
-            <input class="btn btn-primary" type="submit" value="Aplicar">
+            <input id="rangeSlider" type="range" min="100" max="3000" value="3000"></input>
+            <output>3000</output>
+            <input class="btn btn-primary botonPrecio" type="submit" value="Aplicar">
         </form>
         <button class="btn btn-dark" id="restablecerFiltros">Restablecer Filtros</button>
     </aside>
