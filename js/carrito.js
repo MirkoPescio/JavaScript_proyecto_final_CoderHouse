@@ -78,10 +78,10 @@ class Carrito {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>
-                <img src="${producto.imagen}" width=100>
+                <img src="${producto.imagen}" class="imagenProductoCarrito" width=100>
             </td>
-            <td>${producto.titulo}</td>
-            <td>${producto.precio}</td>
+            <td class="tituloProductoCarrito">${producto.titulo}</td>
+            <td class="precioProductoCarrito">${producto.precio}</td>
             <td>
                 <a href="#" class="fas fa-times-circle borrar-producto" data-id="${producto.id}"></a>
             </td>`;
@@ -152,10 +152,10 @@ class Carrito {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>
-                    <img src="${producto.imagen}" width=100>
+                    <img src="${producto.imagen}" class="imagenProductoCarrito" width=100>
                 </td>
-                    <td>${producto.titulo}</td>
-                <td>${producto.precio}</td>
+                    <td class="tituloProductoCarrito">${producto.titulo}</td>
+                <td class="precioProductoCarrito">${producto.precio}</td>
                 <td>
                     <a href="#" class="fas fa-times-circle borrar-producto" data-id="${producto.id}"></a>
                 </td>`;

@@ -12,14 +12,16 @@ const listaProductos = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
 const procesarPedidoBtn = document.getElementById("procesar-pedido");
 
-function cargarEventos() {
-    productos.addEventListener("click", (e)=>{carro.comprarProducto(e)});
+// ============EVENTOS=============
 
-    carrito.addEventListener("click", (e)=>{carro.eliminarProducto(e)});
+productos.addEventListener("click", (e)=>{carro.comprarProducto(e)});
 
-    vaciarCarritoBtn.addEventListener("click", (e)=>{carro.vaciarCarrito(e)});
+carrito.addEventListener("click", (e)=>{carro.eliminarProducto(e)});
 
-    document.addEventListener("DOMContentLoaded", carro.leerLocalStorage());
-}
+vaciarCarritoBtn.addEventListener("click", (e)=>{carro.vaciarCarrito(e)});
 
-cargarEventos();
+document.addEventListener("DOMContentLoaded", carro.leerLocalStorage());
+
+procesarPedidoBtn.addEventListener("click", (e)=>(carro.procesarPedidoIndex(e)));
+
+procesarPedidoBtn.addEventListener("click", (e)=>(carro.procesarPedidoSecciones(e)));

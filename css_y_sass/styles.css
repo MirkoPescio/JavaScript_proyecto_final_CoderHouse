@@ -99,6 +99,29 @@ aside {
   margin: 0.5rem;
 }
 
+#vaciar-carrito {
+  width: 45%;
+  font-size: 0.8rem;
+  margin: 2px;
+}
+
+#procesar-pedido {
+  width: 45%;
+  font-size: 0.8rem;
+  margin: 2px;
+}
+
+@media (max-width: 576px) {
+  .contenedorDelCarrito {
+    width: 6rem !important;
+    max-width: 6rem !important;
+  }
+
+  .carritoEstilos {
+    overflow-x: scroll !important;
+    max-width: 6rem !important;
+  }
+}
 section {
   width: 80% !important;
   float: left !important;

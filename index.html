@@ -28,7 +28,7 @@
         </div>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
+            <div class="container px-4 px-lg-5 navbarDiv">
                 <a class="navbar-brand" href="./index.html">Digital Buy</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,16 +45,16 @@
                         </li>
                     </ul>
                     <form class="d-flex contenedorDelCarrito">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        <button class="navbar-toggler botonCarrito" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                            <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="collapse navbar-collapse carritoDiv" id="navbarCollapse">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item dropdown">
-                                    <img src="./imagenes/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
-                                        width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
-                                    <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <img src="./imagenes/cart.jpeg" class="nav-link dropdown-toggle iconoCarrito" height="75px"
+                                        width="75px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+                                    <div id="carrito" class="dropdown-menu carritoEstilos" aria-labelledby="navbarCollapse">
                                         <table id="lista-carrito" class="table">
                                             <thead>
                                                 <tr>
@@ -401,7 +401,6 @@
         <!-- Core theme JS-->
         <script src="./js/carrito.js"></script>
         <script src="./js/pedido.js"></script>
-        <script src="./js/pedidoIndex.js"></script>
         <script src="./js/filtrar_productos.js"></script>
     </body>
 </html>
