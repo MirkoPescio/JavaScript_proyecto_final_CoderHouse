@@ -1,0 +1,1 @@
+procesarPedidoIndexBtn.addEventListener("click", (e)=>(carro.procesarPedidoIndex(e)));

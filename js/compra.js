@@ -13,22 +13,17 @@ const procesarCompraBtn = document.getElementById("procesar-compra");
 const cliente = document.getElementById("cliente");
 const correo = document.getElementById("correo");
 
-function cargarEventosCompra() {
-    document.addEventListener("DOMContentLoaded", compra.leerLocalStorageCompra());
 
-    compra.calcularTotal();
+document.addEventListener("DOMContentLoaded", compra.leerLocalStorageCompra());
 
-    carritoCompra.addEventListener("click", (e)=>{compra.eliminarProducto(e)});
+compra.calcularTotal();
 
-    procesarCompraBtn.addEventListener("click", procesarCompra);
+carritoCompra.addEventListener("click", (e)=>{compra.eliminarProducto(e)});
 
-    carritoCompra.addEventListener('change', (e) => {compra.obtenerEvento(e)});   
-    carritoCompra.addEventListener('keyup', (e) => {compra.obtenerEvento(e)});
-}
+procesarCompraBtn.addEventListener("click", procesarCompra);
 
-cargarEventosCompra();
-
-
+carritoCompra.addEventListener('change', (e) => {compra.obtenerEvento(e)});   
+carritoCompra.addEventListener('keyup', (e) => {compra.obtenerEvento(e)});
 
 
 async function pagar() {
@@ -60,8 +55,6 @@ async function pagar() {
     console.log(data)
     window.open(data.init_point, "_blank");
 }
-
-
 
 
 function procesarCompra(e) {
@@ -100,6 +93,6 @@ function procesarCompra(e) {
                 compra.vaciarLocalStorage();
                 window.location = "../index.html";
             }, 2000)
-        }, 3000);
+        }, 1000);
     }
 }
