@@ -1,10 +1,25 @@
 body {
-  background: url(../fondo/fondo-negro.jpg);
+  background: url(../fondo/Fondo_Web.png);
 }
 
 /*====================Variables para el main.scss===========================*/
 * {
   box-sizing: border-box;
+}
+
+#ecommerceLogo {
+  width: 15rem;
+  height: 6rem;
+}
+
+.nav-item {
+  font-size: 1.4rem;
+  font-weight: 1500;
+}
+
+.dropdown-item {
+  font-size: 1.4rem;
+  font-weight: 1500;
 }
 
 .divIconos {
@@ -51,10 +66,13 @@ aside {
 }
 
 .tituloFiltro {
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   width: auto;
   margin: 1rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0.5rem;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
@@ -117,6 +135,11 @@ aside {
 }
 
 @media (max-width: 576px) {
+  #ecommerceLogo {
+    width: 12rem;
+    height: 6rem;
+  }
+
   .contenedorDelCarrito {
     width: 6rem !important;
   }
