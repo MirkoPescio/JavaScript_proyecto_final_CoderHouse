@@ -278,8 +278,17 @@ section {
   }
 }
 /*================Aplicando SASS en las secciones del archivo compra.html===========================*/
+.botonesCompra {
+  display: inline-block !important;
+  width: 100%;
+  margin: 0.25rem;
+}
+
 #seguir-comprando {
+  display: flex;
   color: white;
+  float: left;
+  margin-right: 65%;
 }
 
 .compraFormulario {
@@ -297,6 +306,19 @@ section {
   height: 10rem !important;
 }
 
+@media (max-width: 576px) {
+  .botonesCompra {
+    display: inline-block !important;
+    width: 100%;
+    margin: 0.25rem;
+  }
+
+  #seguir-comprando {
+    display: flex;
+    float: left;
+    margin-right: 0.25rem;
+  }
+}
 /*================Aplicando SASS en las secciones del archivo contacto.html=========================*/
 .contenidoContacto {
   box-sizing: border-box;
