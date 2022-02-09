@@ -39,7 +39,7 @@ class Carrito {
             swal({
                 title: 'Oops...',
                 icon: "error",
-                text: 'El producto seleccionado ya fué agregado, modifique después al procesar la compra',
+                text: 'El producto seleccionado ya fué agregado, modifique la cantidad después al procesar la compra',
                 timer: 8000, // 8 segundos
                 button: true
             });

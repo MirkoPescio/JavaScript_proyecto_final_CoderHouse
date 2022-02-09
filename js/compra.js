@@ -77,8 +77,6 @@ function pruebaCorreo (correo){
   }
   return valor;
 }
-
-
 function procesarCompra(e) {
     e.preventDefault();
     if (compra.obtenerProductosLocalStorage().length === 0) {
