@@ -1,7 +1,7 @@
 /*
- * @ version: v2.0.2
+ * @ version: v3.0.0
  * @ autor: Mirko Pescio
- * @ fecha: 18/01/2022
+ * @ fecha: 09/02/2022
  * @ Descripción: Desafío obligatorio clase de AJAX: Incorporando API
                   de Mercado Pago
 */
@@ -22,8 +22,8 @@ carritoCompra.addEventListener("click", (e)=>{compra.eliminarProducto(e)});
 
 procesarCompraBtn.addEventListener("click", procesarCompra);
 
-carritoCompra.addEventListener('change', (e) => {compra.obtenerEvento(e)});   
-carritoCompra.addEventListener('keyup', (e) => {compra.obtenerEvento(e)});
+carritoCompra.addEventListener('change', (e) => {compra.actualizarTotal(e)});   
+carritoCompra.addEventListener('keyup', (e) => {compra.actualizarTotal(e)});
 
 
 async function pagar() {
@@ -56,10 +56,31 @@ async function pagar() {
     window.open(data.init_point, "_blank");
 }
 
+// Planteo las funciones para validación de cliente y de correo
+
+function pruebaCliente (cliente){
+  let expresionCliente=/^[a-zA-ZÀ-ÿ\s]{1,40}$/
+  let validacion = expresionCliente.test(cliente);
+  let valor = false;
+  if (validacion == true) {
+    valor = true;
+  }
+  return valor;
+}
+
+function pruebaCorreo (correo){
+  let expresionCorreo=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,20})+$/;
+  let validacion = expresionCorreo.test(correo);
+  let valor = false;
+  if (validacion == true) {
+    valor = true;
+  }
+  return valor;
+}
+
 
 function procesarCompra(e) {
     e.preventDefault();
-
     if (compra.obtenerProductosLocalStorage().length === 0) {
         swal({
             title: '¡ACCESO DENEGADO!',
@@ -73,26 +94,26 @@ function procesarCompra(e) {
             window.location = "../index.html";
         });
     }
-    else if (cliente.value === "" || correo.value === "") {
+    else if (cliente.value === "" || correo.value === "" || pruebaCliente(cliente.value) == false || pruebaCorreo(correo.value) == false) {
         swal({
             title: 'INFO',
             icon: "info",
-            text: 'Ingrese todos los campos requeridos',
+            text: 'Ingrese todos los campos requeridos de forma correcta',
             timer: 2000, // 2 segundos
             button: false
         });
     }
     else {
-        const cargandoGif = document.querySelector("#cargando");
-        cargandoGif.style.display = "block";
+      const cargandoGif = document.querySelector("#cargando");
+      cargandoGif.style.display = "block";
 
-        setTimeout(()=> { // Para volver a esconder el Gif
-            cargandoGif.style.display = "none";
-            pagar();
-            setTimeout(()=> { // Y vaciamos el localStorage después de terminar de procesar un pago
-                compra.vaciarLocalStorage();
-                window.location = "../index.html";
-            }, 2000)
-        }, 1000);
+      setTimeout(()=> { // Para volver a esconder el Gif
+        cargandoGif.style.display = "none";
+        pagar();
+        setTimeout(()=> { // Y vaciamos el localStorage después de terminar de procesar un pago
+          compra.vaciarLocalStorage();
+          window.location = "../index.html";
+        }, 2000);
+      }, 1000);
     }
 }

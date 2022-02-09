@@ -58,8 +58,12 @@
                 <div class="contenidoContacto__envoltura__formulario">
                     <form id="formularioContacto">
                         <p>
-                            <label for="usuario">Nombre Completo</label>
-                            <input type="text" name="usuario" id="inputNombre" required>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="inputNombre" required>
+                        </p>
+                        <p>
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido" id="inputApellido" required>
                         </p>
                         <p>
                             <label>E-Mail</label>
@@ -78,7 +82,7 @@
                             <textarea name="mensaje" rows="3" id="areaMensaje" required></textarea>
                         </p>
                         <p class="bloque">
-                            <button type="submit">Enviar</button>
+                            <button type="submit" id="submit">Enviar</button>
                         </p>
                     </form>
                 </div>
@@ -96,7 +100,7 @@
             </div>
         </div>
     </main>
-    <!----------------------------------------------------FOOTER----------------------------------------------------->
+    <!----------------------------------------------------FOOTER------------------------------------------------------>
     <footer class="footer">
         <table class="footer__tabla">
             <tr>
@@ -125,10 +129,12 @@
     </footer>
     <!-- Bootstrap core JS-->
     <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/additional-methods.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/bootstrap/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!--JS-->
-    <script src="../js/clase_12_ej_obligatorio.js"></script>
+    <script src="../js/formulario_contacto.js"></script>
 </body>
 </html>

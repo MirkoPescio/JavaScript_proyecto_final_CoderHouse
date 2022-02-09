@@ -39,6 +39,14 @@
     margin-right: 12rem;
 }
 
+.menuCarrito #carrito{
+    display: none;
+}
+
+.menuCarrito:hover #carrito{
+    display: block;
+}
+
 .carousel{
     @include ancho_y_alto($width100, 45rem);
 
@@ -84,10 +92,6 @@ aside {
     width: 100%;
     margin-bottom: 0.25rem;
     font-size: 0.75rem;
-}
-
-#submitBuscador{
-    width: 100%;
 }
 
 // Categorías

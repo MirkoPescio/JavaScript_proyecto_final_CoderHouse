@@ -60,16 +60,16 @@
                             <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
                             <div class="col-12 col-md-10">
                                 <input type="text" class="form-control" id="cliente"
-                                    placeholder="Ingresa nombre cliente" required>
+                                    name="cliente" placeholder="Ingresa nombre cliente" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
                             <div class="col-12 col-md-10">
-                                <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo" required>
+                                <input type="email" name="correo" class="form-control" id="correo" placeholder="Ingresa tu correo" required>
                             </div>
                         </div>
-
+                        
                         <div id="carrito" class="table-responsive">
                             <table class="table compraInfoProductos" id="lista-compra">
                                 <thead>
@@ -103,7 +103,7 @@
                                 <a href="../index.html" class="btn btn-secondary btn-block" id="seguir-comprando">Página principal</a>
                             </div>
                             <div>
-                                <a href="" class="btn btn-error btn-success btn-block" id="procesar-compra">Comprar</a>
+                                <button type="submit" class="btn btn-error btn-success btn-block" id="procesar-compra">Comprar</button>
                             </div>
                         </div>
                     </form>
@@ -140,6 +140,8 @@
     </footer>
     <!-- Bootstrap core JS-->
     <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/additional-methods.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/bootstrap/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

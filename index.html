@@ -52,7 +52,7 @@
                         </button>
                         <div class="collapse navbar-collapse carritoDiv" id="navbarCollapse">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown menuCarrito">
                                     <img src="./imagenes/cart.jpeg" class="nav-link dropdown-toggle iconoCarrito" height="75px"
                                         width="75px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
                                     <div id="carrito" class="dropdown-menu carritoEstilos" aria-labelledby="navbarCollapse">
@@ -124,7 +124,6 @@
             <!--Buscador-->
             <div class="container mt-5">
                 <input class="form-control mr-sm-2" id="buscador" type="search" placeholder="Buscar por nombre" aria-label="Search">
-                <button class="btn btn-outline-primary my-sm-0" id="submitBuscador" type="submit">Buscar</button>
             </div>
             <h6 class="tituloFiltro">FILTRAR POR CATEGORIA</h6>
             <!--Categorías-->
@@ -146,224 +145,11 @@
                 <output>3000</output>
                 <input class="btn btn-primary botonPrecio" type="submit" value="Aplicar">
             </form>
-            <button class="btn btn-dark" id="restablecerFiltros">Restablecer Filtros</button>
         </aside>
         <!-- Section-->
         <section>
             <div class="container px-4 px-lg-5 mt-5 col-md-10" id="lista-productos">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5 producto" category="deportivos">
-                        <div class="card h-100" data-id="fifa21">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/FIFA_21_PS4.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">FIFA 21 PS4</h5>
-                                    <!-- Product price-->
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">2500.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="fifa21">Añadir al Carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5 producto" category="superheroes">
-                        <div class="card h-100" data-id="batmanKnight">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/batman_arkham_knight_ps4.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Batman Arkham Knight PS4</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$900,00</span>
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">700.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="batmanKnight">Añadir al carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5 producto" category="superheroes">
-                        <div class="card h-100" data-id="infamousSecondSon">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/Infamous_Second_Son.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Infamous Second Son PS4</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$1000,00</span>
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">800.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="infamousSecondSon">Añadir al carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5 producto" category="deportivos">
-                        <div class="card h-100" data-id="nba2k21">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/nba_2k21.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">NBA 2k 21 PS4</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">900.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="nba2k21">Añadir al carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5 producto" category="superheroes">
-                        <div class="card h-100" data-id="spiderman">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/Spiderman_PS4.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Marvel's Spiderman PS4</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$1100,00</span>
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">900.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="spiderman">Añadir al carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5 producto" category="superheroes">
-                        <div class="card h-100" data-id="spidermanMilesMorales">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/spiderman-miles-morales1-ps4.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Spiderman Miles Morales PS4</h5>
-                                    <!-- Product price-->
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">1400.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="spidermanMilesMorales">Añadir al carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5 producto" category="accion/aventura">
-                        <div class="card h-100" data-id="theLastofUs2">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/The_Last_of_Us_2.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">The Last of Us 2 PS4</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$2000,00</span>
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">1800.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="theLastofUs2">Añadir al carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5 producto" category="accion/aventura">
-                        <div class="card h-100" data-id="uncharted4">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./imagenes/uncharted-4-a-thiefs-end-ps4.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Uncharted 4: a thief's end PS4</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <div class="contenedorPrecio">
-                                        $<div class="precioProducto">700.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button type="submit" class="btn btn-outline-dark mt-auto agregar-carrito" data-id="uncharted4">Añadir al carrito</button></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="contenedorPrincipales">
                 </div>
             </div>
         </section>
@@ -400,6 +186,7 @@
         <script src="./js/bootstrap/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="./js/DOM_productos_index.js"></script>
         <script src="./js/carrito.js"></script>
         <script src="./js/pedido.js"></script>
         <script src="./js/procesar_pedido_index.js"></script>
